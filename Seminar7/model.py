@@ -67,7 +67,12 @@ def write_format_lines(data, path):
     path -- путь, куда записать
 
     '''
-    ...
+    with open (path, 'w') as f:
+        for item in data:
+            f.write(f"{item['surname']}\n")
+            f.write(f"{item['name']}\n")
+            f.write(f"{item['phone']}\n")
+            f.write(f"{item['description']}\n\n")
 
 def read_format_csv(path, sep = ','):
     '''
