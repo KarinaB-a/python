@@ -38,7 +38,17 @@ def read_format_lines(path):
 
     вернет data внутренний вид
     '''
-    ...
+    data = []
+    with open (path, "r") as f:
+        lines = list(f)
+        for i in range(0, len(lines), 5):
+            data.append({
+                "surname": lines[i].strip(), 
+                'name': lines[i+1].strip(),
+                "phone": lines[i+2].strip(),
+                "description": lines[i+3].strip()
+            })
+    return data
     
 def write_format_lines(data, path):
     '''
