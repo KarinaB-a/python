@@ -67,12 +67,14 @@ def write_format_lines(data, path):
     path -- путь, куда записать
 
     '''
+    sep = "\n"
     with open (path, 'w') as f:
         for item in data:
-            f.write(f"{item['surname']}\n")
-            f.write(f"{item['name']}\n")
-            f.write(f"{item['phone']}\n")
-            f.write(f"{item['description']}\n\n")
+            f.write(f"{sep.join(item.values())}\n\n")
+            # f.write(f"{item['surname']}\n")
+            # f.write(f"{item['name']}\n")
+            # f.write(f"{item['phone']}\n")
+            # f.write(f"{item['description']}\n\n")
 
 def read_format_csv(path, sep = ','):
     '''
@@ -108,7 +110,13 @@ def write_format_csv(data, path, sep = ','):
     sep -- разделитель, значение по умолчанию ","
 
     '''
-    ...
+    with open (path, 'w') as f:
+        for item in data:
+            f.write(f"{sep.join(item.values())}\n")
+            # f.write(f"{item['surname']}{sep}")
+            # f.write(f"{item['name']}{sep}")
+            # f.write(f"{item['phone']}{sep}")
+            # f.write(f"{item['description']}\n")
 
 
 
