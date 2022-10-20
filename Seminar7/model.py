@@ -84,7 +84,17 @@ def read_format_csv(path, sep = ','):
     path -- путь к файлу
 
     '''
-    ...
+    data = []
+    with open (path, "r") as f:
+        for line in f:
+            s = line.split(sep)
+            data.append({
+                "surname": s[0],
+                'name': s[1],
+                "phone": s[2],
+                "description": s[3].strip()
+            })
+    return data
 
 def write_format_csv(data, path, sep = ','):
     '''
