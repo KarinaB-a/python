@@ -101,7 +101,7 @@ def write_format_csv(data, path, sep = ','):
     '''
     with open (path, 'w') as f:
         for item in data:
-            f.write(f"{sep.join(map(str, item.values()))}\n")
+            f.write(f"{sep.join(map(str,item.values()))}\n")
            
 
 
