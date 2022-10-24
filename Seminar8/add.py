@@ -1,7 +1,7 @@
 '''"final_grades": "Итоговая оценка_1"'''
 
-
-
+import string
+from typing import List
 import uuid
 
 
@@ -39,3 +39,23 @@ def add_new_student(db, name, surname, patronymic):
         group = "",  performance = "",  final_grades = "",  awards = "",  promotion_to_the_next_group = ""
     ))
     return id
+
+def delete_student(db: List, id: string):
+    '''
+    удалить студента
+    db - данные
+    id - идентификатор
+    '''
+    for item in db:
+        if item["id"] == id:
+            db.remove(item)
+            return item
+    
+
+def update_student(db, id, name = '', surname = '', patronymic = ''):
+    '''
+    обновить студента
+    db - данные
+    id - идентификатор
+    '''
+    ...
